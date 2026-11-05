@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Аптека «Мяу»{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f9f4; }
+        header { background: #1e7d4f; padding: 15px; }
+        .logo { color: white; font-size: 20px; font-weight: bold; margin-right: 20px;}
+        nav a { color: white; margin-right: 15px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px;}
+        h1 { color: #1e7d4f; }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="logo">Аптека «Мяу»</span>
+        <nav>
+            <a href="{% url 'pharmacy:index' %}">Главная</a>
+            <a href="{% url 'pharmacy:about' %}">О компании</a>
+            <a href="{% url 'pharmacy:contacts' %}">Контакты</a>
+            <a href="{% url 'pharmacy:find' %}">Как нас найти</a>
+            <a href="{% url 'pharmacy:catalog' %}">Каталог</a>
+            <a href="{% url 'pharmacy:promotions' %}">Акции</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
